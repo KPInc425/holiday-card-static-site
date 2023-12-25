@@ -1,0 +1,977 @@
+
+        <html>
+          <head>
+            <style>.input-form div:first-of-type {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.input-form {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    /* padding: 20px;
+    border: 2px solid green; */
+    /* flex-direction: column; */
+    /* justify-content: flex-end; */
+    /* align-items: center; */
+}
+.template1 {
+    display: flex;
+    flex-direction: column;
+    /* height: 100vh; */
+    justify-content: center;
+    align-items: center;
+}
+
+.template-one-container {
+    font-family: heart;
+    display: grid;
+    grid-template-columns: 1.75fr 1.25fr;
+    /* grid-template-rows: auto; */
+    margin: 20px;
+    /* height: 70vh; */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.template1 .statement-container {
+    grid-column-start: 1;
+  font-family: quebeck;
+  background-color: rgba(11, 88, 105, 0.496);
+  padding: 20px 25px;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  /* font-size: xx-large; */
+  margin: 32px 32px 0 32px;
+}
+
+.template1 *,
+.template1 .link-container {
+  /* border: 1px solid red; */
+  grid-column-start: 1;
+  padding: 5px 15px;
+  margin: 0 20px;
+  /* z-index: 3; */
+}
+
+
+.template1 img {
+  grid-column: 2 / 3;
+  grid-row: 1 / 8;
+  max-width: 90%;
+  width: 75%;
+  min-width: 50%;
+  padding: 0;
+  height: auto;
+  margin: 25px;
+  border: 15px inset #ffa3e2;
+  border-radius: 12%;
+  justify-self: center;
+}
+
+.template1 h1 {
+  min-width: 500px;
+  font-size: 2em;
+}
+
+.template1 h4 {
+  font-size: 32px;
+}
+
+/* .template1 p:first-of-type {
+  margin-top: 50px;
+  border-radius: 12px 12px 0 0;
+} */
+
+.template1 .link-container {
+  font-family: snowman;
+  border-radius: 0 0 12px 12px;
+  background-color: #ffa3e2;
+  padding: 12px;
+  margin: 0 auto;
+  margin-bottom: 32px;
+  width: 80%;
+}
+
+.template1 .link-container a {
+  text-decoration: none;
+  /* font-size: xx-large; */
+  color: #4bf3ea;
+  text-shadow: 2px 2px 2px black;
+}
+
+.template1 .ribbon {
+  /* font-size: 18px !important; */
+
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+  width: 50%;
+
+  position: relative;
+  background: #ffa3e2;
+  color: #4bf3ea;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  padding: 2vh 2vw; /* Adjust to suit */
+  margin: 4vh auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.template1 .ribbon:before,
+.template1 .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #ffa3e2;
+  z-index: -1;
+}
+.template1 .ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.template1 .ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.template1 .ribbon .ribbon-content:before,
+.template1 .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #c578bf transparent transparent transparent;
+  bottom: -1em;
+}
+.template1 .ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.template1 .ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+.template1 .border-ribbon {
+  height: fit-content;
+  /* padding: 20px 50px; */
+  width: 95vw;
+  position: relative;
+}
+.template1 .border-ribbon::after {
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 10px,
+    #4bf3ea 0,
+    #4bf3ea 20px,
+    #fff 0,
+    #fff 30px,
+    #ffa3e2 0,
+    #ffa3e2 40px
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  z-index: -2;
+}
+.template1 .border-ribbon::before {
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 0.75) 0%,
+    rgba(148, 206, 233, 0.75) 100%
+  );
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  content: "";
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@media (max-width: 1180px) {
+  .template1 {
+    margin-top: 170px;
+  }
+
+  .template1 * {
+    margin: 0 5px;
+    padding: 0;
+  }
+
+  .template1 img {
+    max-width: 60%;
+  }
+
+  .template-one-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .template1 .link-container {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+  }
+
+  .template1 .ribbon {
+    padding: 2vh 1vw; /* Adjust to suit */
+    margin: 1vh auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+    width: 50%;
+  }
+
+}
+
+.template2 {
+  font-family: heart;
+  display: grid;
+  grid-template-columns: 1.25fr 1.5fr;
+  /* grid-template-rows: auto; */
+  margin: 10px 10px 10px 40px;
+  /* height: 70vh; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.template2 *,
+.template2 .link-container {
+  /* border: 1px solid red; */
+  grid-column-start: 1;
+  padding: 5px 15px;
+  margin: 0 20px;
+  /* z-index: 3; */
+}
+
+.template2 .statement-container {
+    grid-column-start: 1;
+  font-family: quebeck;
+  background-color: rgba(11, 88, 105, 0.496);
+  /* padding: 20px 25px; */
+  color: white;
+  text-shadow: 2px 2px 2px black;
+  font-size: xx-large;
+}
+
+.template2 img {
+  grid-column: 2 / 3;
+  grid-row: 1 / 8;
+  max-width: 90%;
+  width: 75%;
+  padding: 0;
+  height: auto;
+  /* margin: auto; */
+  border: 15px inset #ff1d43;
+  border-radius: 12%;
+  justify-self: center;
+}
+
+.template2 h1 {
+  min-width: 500px;
+  font-size: 2.5vw;
+}
+
+.template2 h4 {
+  font-size: 32px;
+}
+
+/* .template2 p:first-of-type {
+  margin-top: 50px;
+  border-radius: 12px 12px 0 0;
+} */
+
+.template2 .link-container {
+  font-family: snowman;
+  border-radius: 0 0 12px 12px;
+  background-color: #ff1d43;
+  padding: 12px;
+}
+
+.template2 .link-container a {
+  text-decoration: none;
+  font-size: xx-large;
+  color: #ffa4ee;
+  text-shadow: 2px 2px 2px black;
+}
+
+.template2 .ribbon {
+  /* font-size: 18px !important; */
+
+  /* This ribbon is based on a 16px font side and a 24px vertical rhythm. I've used em's to position each element for scalability. If you want to use a different font size you may have to play with the position of the ribbon elements */
+
+  /* width: 50%; */
+
+  position: relative;
+  background: #ff1d43;
+  color: #ffa4ee;
+  text-align: center;
+  text-shadow: 2px 2px 2px black;
+  padding: 5vh 2vw; /* Adjust to suit */
+  margin: 4vh auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.template2 .ribbon:before,
+.template2 .ribbon:after {
+  content: "";
+  position: absolute;
+  display: block;
+  bottom: -1em;
+  border: 1.5em solid #ff1d43;
+  z-index: -1;
+}
+.template2 .ribbon:before {
+  left: -2em;
+  border-right-width: 1.5em;
+  border-left-color: transparent;
+}
+.template2 .ribbon:after {
+  right: -2em;
+  border-left-width: 1.5em;
+  border-right-color: transparent;
+}
+.template2 .ribbon .ribbon-content:before,
+.template2 .ribbon .ribbon-content:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-style: solid;
+  border-color: #c578bf transparent transparent transparent;
+  bottom: -1em;
+}
+.template2 .ribbon .ribbon-content:before {
+  left: 0;
+  border-width: 1em 0 0 1em;
+}
+.template2 .ribbon .ribbon-content:after {
+  right: 0;
+  border-width: 1em 1em 0 0;
+}
+
+.template2 .border-ribbon {
+  height: fit-content;
+  /* padding: 20px 50px; */
+  width: 100wv;
+  position: relative;
+}
+.template2 .border-ribbon::after {
+  background: repeating-linear-gradient(
+    45deg,
+    #fff,
+    #fff 10px,
+    #ffa4ee 0,
+    #ffa4ee 20px,
+    #fff 0,
+    #fff 30px,
+    #ff1d43 0,
+    #ff1d43 40px
+  );
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  content: "";
+  z-index: -2;
+}
+.template2 .border-ribbon::before {
+  /* background-color: white; */
+  background: radial-gradient(
+    circle,
+    rgba(255, 30, 30, 0.75) 0%,
+    rgba(233, 148, 225, 0.75) 100%
+  );
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  content: "";
+  z-index: -1;
+  border-radius: 20px;
+}
+
+@media (max-width: 720px) {
+  .template2 * {
+    margin: 0 5px;
+    padding: 0;
+  }
+
+  .template2 img {
+    max-width: 90%;
+  }
+
+  .template2 {
+    display: block;
+  }
+
+  body {
+    font-size: 14px;
+  }
+
+  .template2 p {
+    font-size: 5vw;
+  }
+
+  .template2 h1 {
+    min-width: 20vw;
+    font-size: 10.5vw;
+  }
+
+  .template2 h4 {
+    font-size: 6.5vw;
+  }
+
+  .template2 .link-container {
+    font-size: large;
+  }
+
+  .template2 .ribbon {
+    padding: 2vh 1vw; /* Adjust to suit */
+    margin: 1vh auto; /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+  }
+
+  /* .border-ribbon {
+        margin: 20px;
+    } */
+}
+.template3, .template3 button {
+  font-family: quebeck;
+}
+.template3 a {
+  text-decoration: none;
+  /* color: #000; */
+}
+
+.statement-font {
+  font-family: JustAnotherHand;
+}
+
+@keyframe animateRadiant {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes eventTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 16ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 16ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@keyframes nameTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 20ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 20ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+.template3, .template3 button {
+  font-family: quebeck;
+}
+.template3 a {
+  text-decoration: none;
+  /* color: #000; */
+}
+
+.statement-font {
+  font-family: JustAnotherHand;
+}
+
+@keyframe animateRadiant {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes eventTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 16ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 16ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@keyframes nameTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 20ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 20ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+.template3, .template3 button {
+  font-family: quebeck;
+}
+.template3 a {
+  text-decoration: none;
+  /* color: #000; */
+}
+
+.statement-font {
+  font-family: JustAnotherHand;
+}
+
+@keyframe animateRadiant {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes eventTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 16ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 16ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@keyframes nameTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 20ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 20ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@font-face {
+  font-family: LovelyChristmas;
+  src: url("media/fonts/LovelyChristmas.ttf");
+}
+
+@font-face {
+  font-family: EpicChristmas;
+  src: url("../../media/fonts/EpicChristmas.ttf");
+}
+.christmasTemplate {
+  font-family: Lucida Handwriting;
+}
+.christmasTemplate a {
+  text-decoration: none;
+  font-family: Papyrus;
+  /* color: #000; */
+}
+
+.christmasTemplate .statement-font {
+  font-family: Papyrus;
+}
+
+
+@keyframes animateRadiant {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes eventTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 16ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 16ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@keyframes nameTyping{
+  0%{ width: 0ch} /*Text is hidden*/
+  30%{ width: 20ch;} /*The enitre header will be typed out 1 character at a time*/
+  80%{ width: 20ch;} /*Text stays visible*/
+  90%{ width: 0ch;} /*Text is deleted*/
+  100%{ width: 0ch;} /*Text stays hidden*/
+}
+@font-face {
+  font-family: Script;
+  src: url('../../media/fonts/Epic\ Christmas.ttf');
+}
+@font-face {
+  font-family: HeadScript;
+  src: url('../../media/fonts/Lovely\ Christmas.ttf');
+}
+
+.xmas2022 {
+  font-family: Script;
+  text-align: center;
+  background-image: url('../../media/img/xmasStretchBG.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: rgb(22, 22, 78);
+  height: 100vh;
+}
+
+button {
+  width: 100%;
+  margin: 5px auto;
+  padding: 10px 0 10px 0;;
+  border-radius: 12px;
+  border: none
+}
+
+
+/* html {
+  background-color: rgb(22, 22, 78);
+} */
+
+
+.imgScroll {
+  /* position: absolute; */
+  background-image: url('../../media/img/xmasScroll.png');
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 32vw;
+  min-height: 92vh;
+  margin: 0 auto;
+}
+
+.imgScroll h1 {
+  font-family: HeadScript;
+  padding-top: 38%;
+  margin: 0;
+}
+
+.imgScroll p, .imgScroll hr {
+  margin: 0 22%;
+}
+
+.imgScroll p {
+  padding: 3%;
+  line-height: 1.5;
+  font-size: 1.2em;
+}
+
+.btnPresent {
+  position: absolute;
+  background-image: url('../../media/img/Red_Present_Box.png');
+  background-size: cover;
+  width: 128px;
+  height: 128px;
+  right: 20px;
+  bottom: 20px;
+  color: white;
+}
+
+.btnPresent h3 {
+  padding-top: 50%;
+  text-shadow: 2px 2px 2px black;
+}
+
+.btnPresent:active {
+  filter: invert();
+}
+
+/* Snow Animations */
+@keyframes fall {
+  0% {
+      opacity: 0;
+  }
+  50% {
+      opacity: 1;
+  }
+  100% {
+      top: 100vh;
+      opacity: 1;
+  }
+}
+
+@keyframes sway {
+  0% {
+      margin-left: 0;
+  }
+  25% {
+      margin-left: 50px;
+  }
+  50% {
+      margin-left: -50px;
+  }
+  75% {
+      margin-left: 50px;
+  }
+  100% {
+      margin-left: 0;
+  }
+}
+
+.effectsContainer {
+  height: 100vh;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  transition: opacity 500ms;
+  width: 100%;
+  z-index: 10;
+  background-color: rgba(0, 0, 0, 0.9);
+  transition: opacity 5s;
+  opacity: 1;
+}
+
+.snow, .star {
+  animation: fall ease-in infinite, sway ease-in-out infinite;
+  position: absolute;
+
+}
+
+.snow {
+  color: rgb(217, 244, 255);
+}
+
+.star {
+  color: rgb(255, 215, 56);
+}
+
+.effectsContainer.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+
+@media (max-width: 600px) {
+  .fancy-h1-letters {
+    font-size: 1.2em;
+  }
+  .fancy-h4-letters {
+    font-size: 0.85em;
+  }
+  .fancy-main-letters {
+    font-size: 0.8em;
+  }
+}
+@media (max-width: 960px) {
+  .fancy-h1-letters {
+    font-size: 1.3em;
+  }
+  .fancy-h4-letters {
+    font-size: 0.95em;
+  }
+  .fancy-main-letters {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 1280px) {
+  .fancy-h1-letters {
+    font-size: 1.4em;
+  }
+  .fancy-h4-letters {
+    font-size: 1.05em;
+  }
+  .fancy-main-letters {
+    font-size: 2em;
+  }
+}
+@media (max-width: 1920px) {
+  .fancy-h1-letters {
+    font-size: 1.5em;
+  }
+  .fancy-h4-letters {
+    font-size: 1.15em;
+  }
+  .fancy-main-letters {
+    font-size: 2.5em;
+  }
+}
+@media (max-width: 2560px) {
+  .fancy-h1-letters {
+    font-size: 2em;
+  }
+  .fancy-h4-letters {
+    font-size: 1.5em;
+  }
+  .fancy-main-letters {
+    font-size: 3em;
+  }
+}
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}@font-face {
+  font-family: cookie;
+  src: url("media/fonts/Cookiemonster-gv11.ttf");
+}
+@font-face {
+  font-family: bloom;
+  src: url("media/fonts/GlowbloompersonaluseItalic-RpzjA.otf");
+}
+@font-face {
+  font-family: snowman;
+  src: url("media/fonts/SnowPuppetsPersonalUseMedium-1G8vj.ttf");
+}
+@font-face {
+  font-family: heart;
+  src: url("media/fonts/TheHeartOfEverythingDemo-KRdD.ttf");
+}
+@font-face {
+  font-family: quebeck;
+  src: url("media/fonts/Quebecks-rgX4L.ttf");
+}
+@font-face {
+  font-family: JustAnotherHand;
+  src: url("media/fonts/JustAnotherHand-Regular.ttf");
+}
+@font-face {
+  font-family: LovelyChristmas;
+  src: url("media/fonts/LovelyChristmas.ttf");
+}
+@font-face {
+  font-family: EpicChristmas;
+  src: url("media/fonts/EpicChristmas.ttf");
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,206,233,1) 100%);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+
+</style>
+          </head>
+          <body>
+            <div class="christmasTemplate" style="filter: drop-shadow(black 3px 3px 3px); width: 90%; display: flex; flex-direction: column; text-align: center; align-items: center; border: 10px double rgb(115, 0, 0); border-radius: 12px; margin: 0px auto; background-image: linear-gradient(rgb(3, 104, 0), rgb(197, 0, 0)); animation: 3s ease 0s infinite alternate none running animatedgradient;"><h4 style="-webkit-text-stroke: 0.01rem lab(98.76 -7.24 21.48); font-size: 3.5rem; font-weight: bold; padding: 15px; color: rgb(248, 182, 0); text-shadow: rgb(0, 0, 0) 1px 1px 3px, rgb(0, 255, 0) 2px 2px 3px, rgb(222, 0, 0) 3px 3px 3px, rgb(18, 78, 0) 4px 4px 3px, rgb(115, 0, 0) 5px 5px 3px; white-space: nowrap; overflow: hidden;">❆❅❄Merry Christmas!!❄❅❆</h4><h1 style="-webkit-text-stroke: 0.01rem lab(98.76 -7.24 21.48); font-size: 4.5rem; font-weight: bold; padding: 15px; color: rgb(248, 182, 0); text-shadow: rgb(0, 0, 0) 1px 1px 3px, rgb(0, 255, 0) 2px 2px 3px, rgb(222, 0, 0) 3px 3px 3px, rgb(18, 78, 0) 4px 4px 3px, rgb(115, 0, 0) 5px 5px 3px; white-space: nowrap; overflow: hidden;">☆Amazing Madre☆</h1><img src="https://i.imgur.com/GoZ7c1F.gif" style="filter: drop-shadow(black 3px 3px 3px); background-image: linear-gradient(rgb(3, 104, 0), rgb(197, 0, 0)); width: 512px; height: 512px; border: 10px double rgb(115, 0, 0); border-radius: 12px; margin-bottom: 20px;"><div class="statement-font" style="filter: drop-shadow(black 3px 3px 3px); padding: 15px; color: transparent; font-size: 3rem; display: flex; flex-direction: column; justify-content: center; align-items: center; width: 50vw; border: 10px double rgb(115, 0, 0); background-image: linear-gradient(rgb(3, 104, 0), rgb(197, 0, 0)); border-radius: 12px; margin-bottom: 15px; text-align: justify;"><p style="padding: 15px; filter: drop-shadow(black 3px 3px 3px); -webkit-text-stroke: 1px rgb(164, 250, 176);">We Love You Very Much!</p><p style="filter: drop-shadow(black 3px 3px 3px); padding: 15px; -webkit-text-stroke: 1px rgb(164, 250, 176);">Thank you for always being there and showing what it means to be a good person. We appreciate every moment we get with you.</p><p style="filter: drop-shadow(black 3px 3px 3px); padding: 15px; -webkit-text-stroke: 1px rgb(164, 250, 176);">Victor and Willow</p></div><div style="margin-bottom: 15px; display: block; padding: 25px;"></div></div>
+            <script>import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+          </body>
+        </html>
+      
